@@ -1,0 +1,123 @@
+GIT
+git push origin variables-sass
+git commit -m "message"
+
+nalivash master s rebase ne s merge, za da nqma commit
+
+delete: git branch -D theBranchToDelete
+
+
+after git rebase origin/master
+1. git status
+2. git push --force
+
+COOL NEW
+
+git commit --amend
++
+git push --force-with-lease
+dora-bshirqvame posledniq commit
+
+git fetch
+git rebase origin/develop
+git push --force-with-lease
+
+git rebase --interactive
+dorazshirqvane na nqkuv dryg kamit
+
+
+The whole process:
+go to the lab and create a new branch
+git checkout master
+git pull
+git fetch
+git chekout theNameOfTHeNewBranch
+code code code
+git add *
+git status
+git restore --staged if needed
+git commit -m "some message"
+git push
+
+
+if behind master:
+git rebase origin/master
+if the numbers are right
+git push --force
+
+Get commits from another branch
+1. You are in branch A;
+2. You want the last 2 commits from branch A in branch B
+2. git log -3
+3. copy the hashes of commits you want
+4. git checkout branch B
+5.  git cherry-pick hash1
+6. git cherry-pick hash2
+7. git status to make sure it went down ok
+
+Delete commits from your branch:
+1. You are in branch A;
+2. You want to delete the last 2 commits;
+3. git log -3 for just making sure
+5. git rebase -i HEAD~2
+6. Then it will show you the other editor(in my case VIM) and will list all the commands you can use with these commits
+7. Find the option to delete (in my case 'drop')
+8. Switch the command from 'pick' to 'drop'
+9. Save & exit (in my case :wq)
+10. git log -3 for just making sure it went down ok
+
+If you just want to replace one file with how it was before -> git checkout theNameOfTheFile.js
+
+It's case-sensitive, just make sure created branch and push to branch both are in same capital.
+
+Example:
+
+git checkout -b "TASK-135-hello-world"
+WRONG way of doing:
+
+git push origin task-135-hello-world     #FATAL: task-135-hello-world cannot be resolved to branch
+CORRECT way of doing:
+
+git push origin TASK-135-hello-world
+
+
+Create new repo
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin remoteRepositoryURL
+git remote -v
+git push -f origin master
+
+
+…or create a new repository on the command line
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/valllentinnaa/test.git
+git push -u origin master
+…or push an existing repository from the command line
+git remote add origin https://github.com/valllentinnaa/test.git
+git push -u origin master
+
+MERGE COMMITS
+X number of commits
+git log -X -> double check which are the commits needed + hashes with the gitlab
+git rebase -i HEAD~X
+
+in VIM:
+pick -> the commit you want to merge the next with
+fixup
+fixup
+..
+pick -> if there is some you don't want to merge
+
+git status (the difference should be exactly X)
+git push --force-with-lease
+
+
+GET ORIGIN
+git config --get remote.origin.url
+
+````````````````````````````````````````
